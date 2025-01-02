@@ -16,7 +16,6 @@ let counter = 0;
 
 const appendOs = (entries, observer) => {
     entries.forEach((entry) => {
-        console.log(`Crossing threshold of target ${entry.target.id} with intersection ratio ${entry.intersectionRatio}`);
         if (entry.intersectionRatio >= 0.25) {
             if (counter < numberOfScrolls) {
                 const previousSpan = addedSpans.shift();
@@ -26,7 +25,6 @@ const appendOs = (entries, observer) => {
                 observer.observe(newSpan);
                 addedSpans.push(newSpan);
             } else {
-                console.log("Added all spans, adding final text")
                 const previousSpan = addedSpans.shift();
                 observer.unobserve(previousSpan);
 
@@ -66,7 +64,6 @@ function setSpecialDateContent(parentNode) {
 }
 
 function appendOsNode(parentNode, counter) {
-    console.log("Appending new span");
     const newSpan = document.createElement("span");
     newSpan.id = `span-${counter}`;
     const newContent = document.createTextNode(lotsOfOs);
