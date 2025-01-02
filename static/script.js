@@ -80,5 +80,13 @@ function appendFinalText(parentNode) {
     textSpan.classList.add("text", "range-class");
     const content = document.createTextNode(" much. Happy birthday!");
     textSpan.appendChild(content);
+
+    const specialDayImage = new Image(200);
+    specialDayImage.src = "static/images/hbd.png";
+    const cakeImage = new Image(200);
+    cakeImage.src = "static/images/cake.jpg";
+
     parentNode.appendChild(textSpan);
+    parentNode.appendChild(specialDayImage);
+    parentNode.appendChild(cakeImage);
 }
