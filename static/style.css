@@ -21,3 +21,16 @@ h1 {
     margin-top: 20px;
     margin-bottom: 5px;
 }
+
+.text {
+    line-height: 1.2rem;
+    font-size: 1rem;
+}
+
+.no-gaps {
+    font-size: 0;
+}
+
+.range-class {
+    white-space: pre;
+}

@@ -1,7 +1,10 @@
 const contentTitle = document.getElementById("content-title");
 const constructionParagraph = document.getElementById("construction-paragraph");
 const contentElement = document.getElementById("content");
-const endlessElement = document.getElementById("endless");
+const endlessElement = document.getElementById("endless-os");
+
+const specialDateInitialText = "To my wonderful wife, wishing you the best birthday. Since you asked me how " +
+"much I love you, I figured part of this present would be providing the answer. So here it is: I love you sooo";
 
 const lotsOfOs = "o".repeat(3000);
 const specialDate = new Date(2025, 1, 3);
@@ -34,7 +37,7 @@ const appendOs = (entries, observer) => {
 }
 
 if (new Date().getDate() === specialDate.getDate()) {
-    setSpecialDateContent(endlessElement);
+    setSpecialDateContent(contentElement);
 
     const options = {
         root: document.querySelector("#scrollArea"),
@@ -49,16 +52,17 @@ if (new Date().getDate() === specialDate.getDate()) {
     observer.observe(newSpan);
 }
 
-function setSpecialDateContent(endlessElementNode) {
+function setSpecialDateContent(parentNode) {
     document.title = "Happy Birthday!";
     constructionParagraph.setAttribute("hidden", true);
 
     contentTitle.innerText = "Happy Birthday, Claire!";
 
     const textSpan = document.createElement("span");
-    const content = document.createTextNode("Here is some text");
+    textSpan.classList.add("text");
+    const content = document.createTextNode(specialDateInitialText);
     textSpan.appendChild(content);
-    endlessElementNode.appendChild(textSpan);
+    parentNode.prepend(textSpan);
 }
 
 function appendOsNode(parentNode, counter) {
@@ -73,7 +77,8 @@ function appendOsNode(parentNode, counter) {
 
 function appendFinalText(parentNode) {
     const textSpan = document.createElement("span");
-    const content = document.createTextNode(" much");
+    textSpan.classList.add("text", "range-class");
+    const content = document.createTextNode(" much. Happy birthday!");
     textSpan.appendChild(content);
     parentNode.appendChild(textSpan);
 }
