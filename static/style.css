@@ -34,3 +34,7 @@ h1 {
 .range-class {
     white-space: pre;
 }
+
+.centered-content {
+    text-align: center;
+}

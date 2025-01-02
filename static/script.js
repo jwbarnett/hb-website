@@ -81,12 +81,16 @@ function appendFinalText(parentNode) {
     const content = document.createTextNode(" much. Happy birthday!");
     textSpan.appendChild(content);
 
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("centered-content");
     const specialDayImage = new Image(200);
     specialDayImage.src = "static/images/hbd.png";
     const cakeImage = new Image(200);
     cakeImage.src = "static/images/cake.jpg";
 
+    imageContainer.appendChild(specialDayImage);
+    imageContainer.appendChild(cakeImage);
+
     parentNode.appendChild(textSpan);
-    parentNode.appendChild(specialDayImage);
-    parentNode.appendChild(cakeImage);
+    parentNode.appendChild(imageContainer);    
 }
