@@ -2,10 +2,6 @@
     --heading-font-family: proxima-nova, sans-serif;
 }
 
-html {
-    font-size: 20px;
-}
-
 body {
     max-width: 800px;
     margin: auto;

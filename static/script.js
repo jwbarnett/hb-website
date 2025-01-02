@@ -7,7 +7,7 @@ const specialDateInitialText = "To my wonderful wife, wishing you the best birth
 "much I love you, I figured part of this present would be providing the answer. So here it is: I love you sooo";
 
 const lotsOfOs = "o".repeat(3000);
-const specialDate = new Date(2025, 1, 2);
+const specialDate = new Date(2025, 1, 3);
 const numberOfScrolls = 10;
 
 const addedSpans = [];
